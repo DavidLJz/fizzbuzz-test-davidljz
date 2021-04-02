@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Fizzbuzz Test</title>
+</head>
+<body>
+	<a href="./fizzbuzz.php">Run on PHP</a>
+	<a href="#" id="run">Run on JS</a>
+	<div class="output"></div>
+
+
+	<script type="text/javascript">
+		let run = document.getElementById('run')
+
+		run.addEventListener('click', function () {
+			console.log('test')
+
+			let div = document.querySelector('.output')
+
+			for (let i = 1; i <= 100; i++) {
+				let fizz = i % 3 === 0
+				let buzz = i % 5 === 0
+
+				switch (true) {
+					case (fizz && buzz) :
+						div.innerHTML += 'FizzBuzz<br>'
+						break
+
+					case (fizz && !buzz):
+						div.innerHTML += 'Fizz<br>'
+						break
+
+					case (buzz && !fizz):
+						div.innerHTML += 'Buzz<br>'
+						break
+
+					default :
+						div.innerHTML += i + '<br>'
+						break
+				}
+			}
+		})
+	</script>
+</body>
+</html>
